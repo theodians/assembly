@@ -1,0 +1,29 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+
+LXI H,1 
+MVI A,0
+CMP M
+JZ SKIP
+JP COMMANDB
+
+SKIP: NOP
+
+MVI A,10
+
+CMP M
+JNZ COMMANDB
+
+JMP NEXT
+COMMANDB: NOP
+NEXT: NOP
+
+hlt

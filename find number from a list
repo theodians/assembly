@@ -1,0 +1,37 @@
+
+;FIND NUMBER FROM A LIST
+
+jmp start
+start: nop
+
+LXI H,3000 
+;This is the memory 
+;adrees(can be anywere we want)
+; we store our number 
+
+MVI C,4;our counter
+
+MOV A,M ;we transfer our memory value to our accumulator 
+;so we can use that value for compering
+
+INX H ;we increase to the next adrees 
+;so we can comere our first value
+
+
+LOOP1: NOP
+CMP M ;our magic command this comand executes A-M
+;for to numbers to be equal we just need their diference 
+;to equal to 0
+
+JNZ NEXT ;this command jump if not 0, jums the next two line of codes
+;we can se it as our if statement.if(A==M){
+LXI H,3005
+MOV M,A
+;}
+NEXT: NOP;else
+
+INX H
+DCR C
+JNZ LOOP1
+
+hlt

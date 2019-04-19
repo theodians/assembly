@@ -1,0 +1,29 @@
+
+;HOW TO COPY AN ARRAY 
+;FROM ONE PLACE TO OTHER
+
+
+jmp start
+
+
+
+
+;code
+start: nop
+
+LXI H,3000
+LXI D,4000
+MVI C,4
+
+LOOP: NOP
+
+MOV A,M
+STAX D
+
+INX H
+INX D
+DCR C
+
+JNZ LOOP
+
+hlt

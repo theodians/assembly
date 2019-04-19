@@ -1,0 +1,44 @@
+;for DESCENDING loop in assembly
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+;lets say we wont to create this loop
+;     for(i=100, i>0 ,i--){
+
+;         commands.....
+;       i, 'can be whatever we like' in this descending loop.
+;     };
+MVI B,100 ;this is our i=x
+
+;I am going to give directly a value, lets say 100 to B
+
+LOOP:NOP ;our loop starts hear is like our first {
+;
+
+;In this place i can wright what i want my loop to do
+
+;
+
+DCR B
+
+; In this code i need to decrease B by 1, is the i-- part of our for-loop
+
+; if you want something else this command can be easily changed.
+
+JZ Next ;this is the i>0 part of our loop
+
+;when i becomes zero jump
+
+
+JP Loop
+
+;We need to check that i isn't a negative num.
+
+Next:NOP ;this is the end frase of our loop or }
+
+hlt
